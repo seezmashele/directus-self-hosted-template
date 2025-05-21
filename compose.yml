@@ -1,6 +1,6 @@
 services:
   directus:
-    image: directus/directus
+    image: docker.io/directus/directus
     ports:
       - 8055:8055
     volumes:
@@ -20,3 +20,5 @@ services:
 # to create a new directus instance
 # generate a secret key with: openssl rand -base64 32
 # enter your email and password
+# run: docker-compose up or podman-compose up -d
+# -d to run in the background (detached mode)
