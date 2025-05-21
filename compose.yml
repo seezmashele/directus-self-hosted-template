@@ -1,0 +1,22 @@
+services:
+  directus:
+    image: directus/directus
+    ports:
+      - 8055:8055
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    environment:
+      SECRET: ''
+      ADMIN_EMAIL: ''
+      ADMIN_PASSWORD: ''
+      DB_CLIENT: 'sqlite3'
+      DB_FILENAME: '/directus/database/data.db'
+      WEBSOCKETS_ENABLED: 'false'
+      # CORS_ENABLED: 'true'
+      # CORS_ORIGIN: '*'
+      restart: always
+# to create a new directus instance
+# generate a secret key with: openssl rand -base64 32
+# enter your email and password
