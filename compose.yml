@@ -8,12 +8,12 @@ services:
       - ./uploads:/directus/uploads
       - ./extensions:/directus/extensions
     environment:
-      SECRET: ''
-      ADMIN_EMAIL: ''
-      ADMIN_PASSWORD: ''
-      DB_CLIENT: 'sqlite3'
-      DB_FILENAME: '/directus/database/data.db'
-      WEBSOCKETS_ENABLED: 'false'
+      SECRET: ""
+      ADMIN_EMAIL: ""
+      ADMIN_PASSWORD: ""
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/directus/database/data.db"
+      WEBSOCKETS_ENABLED: "false"
       # CORS_ENABLED: 'true'
       # CORS_ORIGIN: '*'
       restart: always
@@ -22,3 +22,9 @@ services:
 # enter your email and password
 # run: docker-compose up or podman-compose up -d
 # -d to run in the background (detached mode)
+
+# change database folder permissions if sqlite doesn't work
+# same goes for uploads and extensions if they don't work by default
+# chmod -R 777 database
+# chmod -R 777 uploads
+# chmod -R 777 extensions
